@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">UnitConversionAug30</string>
+    <string name = "selectMeasurement"> Select Measurement </string>
+    <string-array name = "Measurements">
+        <item> Length</item>
+        <item> Weighttt </item>
+    </string-array>
 </resources>

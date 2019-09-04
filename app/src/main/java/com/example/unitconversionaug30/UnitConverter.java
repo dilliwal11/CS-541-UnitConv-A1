@@ -20,25 +20,24 @@ public class UnitConverter extends AppCompatActivity implements AdapterView.OnIt
     Spinner spinnerUnits;
     List<String> paths = new ArrayList<String>();
     List<String> units = new ArrayList<String>();
-
+    String state[] = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_unit_converter);
-        paths.add("Length");
-        paths.add("Weight");
-
-        spinnerList = findViewById(R.id.spinnerListMeasurement);
-        spinnerUnits =  findViewById(R.id.spinnerListUnits);
-        ArrayAdapter <String> arrayAdapter = new ArrayAdapter<String>(UnitConverter.this,R.layout.support_simple_spinner_dropdown_item
-        , paths);
 
 
-        spinnerList.setAdapter(arrayAdapter);
+        spinnerList = (Spinner) findViewById(R.id.spinnerListMeasurement);
+        spinnerList.setOnItemSelectedListener(this);
+       spinnerUnits =  findViewById(R.id.spinnerListUnits);
+        //
 
-        Toast.makeText(this,spinnerList.toString(),Toast.LENGTH_LONG).show();
+
+       // spinnerList.setAdapter(arrayAdapter);
+
+       // Toast.makeText(this,spinnerList.toString(),Toast.LENGTH_LONG).show();
 
 
 
@@ -49,35 +48,34 @@ public class UnitConverter extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-        Log.d("hello", "onItemSelected: "+adapterView);
-        Toast.makeText(this,"hello",Toast.LENGTH_LONG).show();
-        if (adapterView.equals(spinnerList)) {
-            //
-            Log.d("hello", "onItemSelected: "+adapterView);
 
 
-            if(spinnerList.getSelectedItem().equals("Length")){
-                units.add("Kilometers");
-                units.add("Miles");
-                ArrayAdapter<String> arrayAdapterUnits = new ArrayAdapter<String>(UnitConverter.this, R.layout.support_simple_spinner_dropdown_item
-                        , units);
+        Toast.makeText(this,"selected "+i,Toast.LENGTH_LONG).show();
 
-                spinnerUnits.setAdapter(arrayAdapterUnits);
-
-            }
-
-
-
-
-
+        if(i==0){
+            state = new String[]{"Kilometer","Miles"};
 
         }
+        if(i==1){
+
+            state = new String[]{"Kilograms","Pounds"};
+
+        }
+
+
+        ArrayAdapter <String> arrayAdapter = new ArrayAdapter<String>(UnitConverter.this,R.layout.support_simple_spinner_dropdown_item, state);
+
+       spinnerUnits.setAdapter(arrayAdapter);
+
 
 
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+        Toast.makeText(this,"not selected" ,Toast.LENGTH_LONG).show();
+
 
     }
 }

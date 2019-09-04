@@ -15,6 +15,9 @@
         android:id="@+id/spinnerListMeasurement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:prompt="@string/selectMeasurement"
+        android:entries="@array/Measurements"
+
         android:spinnerMode="dropdown"
 
         />
@@ -22,5 +25,10 @@
     <Spinner
         android:id="@+id/spinnerListUnits"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:spinnerMode="dropdown"
+
+        />
 </LinearLayout>
