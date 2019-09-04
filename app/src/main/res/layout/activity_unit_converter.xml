@@ -15,20 +15,46 @@
         android:id="@+id/spinnerListMeasurement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:prompt="@string/selectMeasurement"
         android:entries="@array/Measurements"
+        android:prompt="@string/selectMeasurement"
 
         android:spinnerMode="dropdown"
 
         />
-
     <Spinner
         android:id="@+id/spinnerListUnits"
         android:layout_width="match_parent"
 
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:spinnerMode="dropdown"
 
         />
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="value"
+        android:inputType="number" />
+
+    <Spinner
+        android:id="@+id/spinnerSecondUnit"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:onClick="convert"
+
+        />
+
+
 </LinearLayout>

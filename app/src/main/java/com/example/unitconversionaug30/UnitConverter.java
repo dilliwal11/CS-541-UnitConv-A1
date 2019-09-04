@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -17,7 +19,9 @@ public class UnitConverter extends AppCompatActivity implements AdapterView.OnIt
 
 
     Spinner spinnerList;
-    Spinner spinnerUnits;
+    Spinner spinnerUnits, spinnerSecondUnits;
+    EditText editTextValue;
+    Button button;
     List<String> paths = new ArrayList<String>();
     List<String> units = new ArrayList<String>();
     String state[] = null;
@@ -32,6 +36,9 @@ public class UnitConverter extends AppCompatActivity implements AdapterView.OnIt
         spinnerList = (Spinner) findViewById(R.id.spinnerListMeasurement);
         spinnerList.setOnItemSelectedListener(this);
        spinnerUnits =  findViewById(R.id.spinnerListUnits);
+       spinnerSecondUnits = findViewById(R.id.spinnerSecondUnit);
+       editTextValue = findViewById(R.id.editText);
+       button = findViewById(R.id.button);
         //
 
 
@@ -66,6 +73,7 @@ public class UnitConverter extends AppCompatActivity implements AdapterView.OnIt
         ArrayAdapter <String> arrayAdapter = new ArrayAdapter<String>(UnitConverter.this,R.layout.support_simple_spinner_dropdown_item, state);
 
        spinnerUnits.setAdapter(arrayAdapter);
+       spinnerSecondUnits.setAdapter(arrayAdapter);
 
 
 
@@ -75,6 +83,27 @@ public class UnitConverter extends AppCompatActivity implements AdapterView.OnIt
     public void onNothingSelected(AdapterView<?> adapterView) {
 
         Toast.makeText(this,"not selected" ,Toast.LENGTH_LONG).show();
+
+
+    }
+
+    public void convert(View view) {
+
+        int value= 0;
+        String unit1 = spinnerUnits.getSelectedItem().toString();
+        String unit2 = spinnerSecondUnits.getSelectedItem().toString();
+        value = Integer.parseInt(editTextValue.getText().toString());
+        if(unit1.equals("Kilograms") && unit2.equals("Pounds")){
+
+
+
+            Toast.makeText(this,"Value in Pounds is: "+value*2.05,Toast.LENGTH_LONG).show();
+
+
+
+        }
+
+
 
 
     }
