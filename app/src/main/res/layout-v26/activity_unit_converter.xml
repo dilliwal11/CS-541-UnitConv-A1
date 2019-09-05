@@ -46,7 +46,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textSize="20dp"
             android:layout_marginTop="30dp"
             android:text="@string/to" />
 
@@ -69,13 +68,11 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="150dp"
+        android:layout_width="203dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:ems="5"
-        android:gravity="center"
+        android:ems="10"
         android:hint="@string/value"
-        android:textSize="20dp"
         android:inputType="number"
         android:autofillHints="" />
 
@@ -86,20 +83,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textSize="25dp"
             android:layout_marginTop="25dp"
             android:text="@string/sign" />
 
         <TextView
             android:id="@+id/valueTv"
-            android:layout_width="150dp"
-            android:gravity="center"
-            android:textSize="25dp"
-            android:maxLines="1"
-            android:maxEms="5"
+            android:layout_width="171dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="" />
+            android:text="@string/valueConverted" />
 
     </LinearLayout>
     <Button
