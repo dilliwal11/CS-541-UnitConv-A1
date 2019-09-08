@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -48,7 +49,7 @@ public class UnitConverter extends AppCompatActivity implements AdapterView.OnIt
        editTextValue = findViewById(R.id.editText);
        valueTv = findViewById(R.id.valueTv);
        button = findViewById(R.id.button);
-
+        
 
 
 
