@@ -60,7 +60,6 @@ public class UnitConverter extends AppCompatActivity implements AdapterView.OnIt
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
 
-        Log.d("selected", "onItemSelected: " +adapterView.getId());
 
         valueTv.setText("");
         editTextValue.setText("");
@@ -98,7 +97,6 @@ public class UnitConverter extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
-        Toast.makeText(this,"not selected" ,Toast.LENGTH_LONG).show();
 
 
     }
