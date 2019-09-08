@@ -61,6 +61,9 @@ public class UnitConverter extends AppCompatActivity implements AdapterView.OnIt
 
         Log.d("selected", "onItemSelected: " +adapterView.getId());
 
+        valueTv.setText("");
+        editTextValue.setText("");
+
         if(i==0){
             state = new String[]{"Kilometer","Miles"};
 
@@ -108,19 +111,35 @@ public class UnitConverter extends AppCompatActivity implements AdapterView.OnIt
             return;
 
 
-        } else {
+        }
+
+
+        if(Float.valueOf(editTextValue.getText().toString()) == 0 ){
+
+            valueTv.setText("0");
+        }
+
+
+        else {
 
 
             DecimalFormat f = new DecimalFormat("##.00");
-            int value = 0;
+            float value = 0;
             String unit1 = spinnerUnits.getSelectedItem().toString();
             String unit2 = spinnerSecondUnits.getSelectedItem().toString();
-            value = Integer.parseInt(editTextValue.getText().toString());
+            value = Float.parseFloat(editTextValue.getText().toString());
+
+
+
+            if(unit1.equals(unit2)){
+
+                valueTv.setText(editTextValue.getText().toString());
+            }
 
 
             if (unit1.equals("Kilograms") && unit2.equals("Pounds")) {
 
-                valueTv.setText("" + f.format(value * 2.05));
+                valueTv.setText("" +f.format(value * 2.05));
 
 
                 Toast.makeText(this, "Value in Pounds is: " + value * 2.05, Toast.LENGTH_LONG).show();

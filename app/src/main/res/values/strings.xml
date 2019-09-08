@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UnitConversionAug30</string>
+    <string name="app_name">Unit Converter</string>
     <string name = "selectMeasurement"> Select Measurement </string>
     <string name="to">to</string>
     <string name="value">Value</string>

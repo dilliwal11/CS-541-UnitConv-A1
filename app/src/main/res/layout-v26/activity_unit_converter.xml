@@ -66,15 +66,16 @@
 
         >
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="203dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="@string/value"
-        android:inputType="number"
-        android:autofillHints="" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:layout_marginLeft="10dp"
+            android:hint="@string/value"
+            android:inputType="number" />
 
 
         <TextView
